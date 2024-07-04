@@ -60,15 +60,7 @@ WSGI_APPLICATION = "todolist.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-print(os.environ.get("MYSQL_ENGINE", ""))
-print(os.environ.get("HOST", ""))
-print(os.environ.get("ENGINE", ""))
-print(os.environ.get("ENGINE", ""))
-print(os.environ.get("ENGINE", ""))
-print(os.environ.get("ENGINE", ""))
-print(os.environ.get("ENGINE", ""))
-print(os.environ.get("ENGINE", ""))
-print(os.environ.get("ENGINE", ""))
+
 DATABASES = {
     'default': {
         'ENGINE': os.environ.get("ENGINE", ""),
