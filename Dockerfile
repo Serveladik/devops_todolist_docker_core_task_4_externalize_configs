@@ -2,6 +2,12 @@
 ARG PYTHON_VERSION=3.8
 FROM python:${PYTHON_VERSION} as builder
 
+ENV ENGINE=mysql.connector.django
+ENV NAME=app_db
+ENV USER=app_user
+ENV PASSWORD=1234
+ENV HOST=mysql
+ENV PORT=3306
 
 # Set the working directory
 WORKDIR /app
@@ -19,7 +25,7 @@ COPY --from=builder /app .
 RUN pip install --upgrade pip && \
     pip install -r requirements.txt
 
-EXPOSE 8081
+EXPOSE 8080
 
 # Run database migrations and start the Django application
-ENTRYPOINT ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8081"]
+ENTRYPOINT ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8080"]
