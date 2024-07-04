@@ -14,6 +14,11 @@ services:
       - "8081:8081"
     environment:
       - PYTHONUNBUFFERED=1
+      - ENGINE=mysql.connector.django
+      - NAME=app_db
+      - USER=app_user
+      - PASSWORD=1234
+      - HOST=mysql
     networks:
       - todoapp-net
     depends_on:
@@ -30,13 +35,6 @@ services:
       - "3307:3307"
     volumes:
       - todoapp-db-data:/var/lib/mysql
-    environment:
-      - ENGINE=mysql.connector.django
-      - NAME=app_db
-      - USER=app_user
-      - PASSWORD=1234
-      - HOST=mysql
-      - PORT=3307
     networks:
       - todoapp-net
 
