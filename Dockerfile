@@ -2,13 +2,6 @@
 ARG PYTHON_VERSION=3.8
 FROM python:${PYTHON_VERSION} as builder
 
-ENV ENGINE=mysql.connector.django
-ENV NAME=app_db
-ENV USER=app_user
-ENV PASSWORD=1234
-ENV HOST=mysql
-ENV PORT=3306
-
 # Set the working directory
 WORKDIR /app
 COPY . .
