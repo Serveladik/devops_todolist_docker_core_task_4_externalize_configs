@@ -1,6 +1,6 @@
 # docker-compose.yml
 
-version: '4'
+version: '3'
 networks:
   todoapp-net:
 
